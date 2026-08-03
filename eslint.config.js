@@ -21,7 +21,7 @@ export default defineConfig([
     },
   },
   {
-    files: ['src/shared/components/ui/**/*.tsx'],
+    files: ['src/shared/ui/**/*.tsx'],
     rules: { 'react-refresh/only-export-components': 'off' },
   },
   eslintConfigPrettier,
