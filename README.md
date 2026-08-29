@@ -13,7 +13,7 @@ A modern, production-inspired SaaS application for managing projects, tasks, and
 - React
 - TypeScript
 - Vite
-- React Router
+- TanStack Router
 
 ### State Management
 
