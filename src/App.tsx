@@ -1,12 +1,20 @@
-import { Button } from '@components/ui/button';
+import { RouterProvider } from '@tanstack/react-router';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { useAuthStore } from '@/features/auth';
+import { queryClient } from '@/routes/router';
+import { AuthProvider } from '@/app/providers/AuthProvider';
+import { router } from '@/routes/router';
 
-function App() {
+export const App = () => {
+  const auth = useAuthStore();
   return (
-    <div>
-      <Button variant='outline'>Button</Button>
-      <div>Project Management Dashboard</div>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider
+          router={router}
+          context={{ auth }}
+        />
+      </AuthProvider>
+    </QueryClientProvider>
   );
-}
-
-export default App;
+};
